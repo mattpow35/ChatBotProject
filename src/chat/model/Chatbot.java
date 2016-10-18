@@ -17,8 +17,8 @@ public class Chatbot
 	{
 		memesList = new ArrayList<String>();
 		politicalTopicList = new ArrayList<String>();
-		this.userName = new String(userName);
-		this.content = new String("Setters and Getters work");
+		this.userName = userName;
+		this.content = content;
 	}
 
 	private void buildMemesList()
