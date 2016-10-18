@@ -18,7 +18,7 @@ public class Chatbot
 		memesList = new ArrayList<String>();
 		politicalTopicList = new ArrayList<String>();
 		this.userName = new String(userName);
-		this.content = new String("topic area of interest");
+		this.content = new String("Setters and Getters work");
 	}
 
 	private void buildMemesList()
@@ -31,14 +31,16 @@ public class Chatbot
 
 	/**
 	 * * Checks the length of the supplied string. Returns false if the supplied
-	 * String is empty or null, otherwise returns true. * @param currentInput * @return
+	 * String is empty or null, otherwise returns true. 
+	 * * @param currentInput 
+	 * * @return
 	 * A true or false based on the length of the supplied String.
 	 */
 	public boolean lengthChecker(String currentInput)
 	{
 		boolean hasLength = false;
 		
-		if (currentInput != null || !currentInput.equals(""))
+		if (currentInput != null && !currentInput.equals(""))
 		{
 			hasLength = true;
 		}
