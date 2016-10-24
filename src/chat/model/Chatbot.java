@@ -53,7 +53,7 @@ public class Chatbot
 		politicsList.add("Democrat");
 		politicsList.add("Republican");
 		politicsList.add("conservative");
-		politicsList.add("11/8/6");
+		politicsList.add("11/8/16");
 		politicsList.add("Clinton");
 		politicsList.add("Trump");
 		politicsList.add("Kaine");
@@ -65,6 +65,9 @@ public class Chatbot
 		politicsList.add("debate");
 		politicsList.add("vote");
 		politicsList.add("liberal");
+		politicsList.add("politics");
+		politicsList.add("white house");
+		politicsList.add("vice president");
 		
 	}
 
@@ -93,8 +96,8 @@ public class Chatbot
 	 * instance.
 	 * 
 	 * @param currentInput
-	 *            The supplied String to be checked. * @return Whether it
-	 *            matches the content area.
+	 * The supplied String to be checked. 
+	 * @return Whether it matches the content area.
 	 */
 	public boolean contentChecker(String currentInput)
 	{
@@ -118,7 +121,15 @@ public class Chatbot
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
-		return false;
+		boolean isPolitical = false;
+		
+		for(String buildPoliticalTopicList : politicsList)
+		{
+			if(currentInput.equals(buildPoliticalTopicList));
+			isPolitical = true;
+		}
+		
+		return isPolitical;
 	}
 
 	/**
