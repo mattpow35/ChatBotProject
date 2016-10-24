@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private ArrayList<String> memesList;
-	private ArrayList<String> politicalTopicList;
+	private ArrayList<String> politicsList;
 	private String userName;
 	private String content;
 
@@ -16,17 +16,56 @@ public class Chatbot
 	public Chatbot(String userName)
 	{
 		memesList = new ArrayList<String>();
-		politicalTopicList = new ArrayList<String>();
+		buildMemesList();
+		politicsList = new ArrayList<String>();
+		buildPoliticalTopicsList();
 		this.userName = userName;
-		this.content = content;
+		this.content = "content";
 	}
 
 	private void buildMemesList()
 	{
-	}
+		memesList.add("doge");
+		memesList.add("cute animals");
+		memesList.add("grumpy cat");
+		memesList.add("dat boi");
+		memesList.add("willy wonka");
+		memesList.add("harambe");
+		memesList.add("john cena");
+		memesList.add("ken bone");
+		memesList.add("arthur fist");
+		memesList.add("kermit");
+		memesList.add("shrek");
+		memesList.add("the office");
+		memesList.add("bad luck brian");
+		memesList.add("baby fist pump");
+		memesList.add("sports");
+		memesList.add("gavin");
+		memesList.add("steve harvey");
+		memesList.add("chuck norris");
+		memesList.add("trump");
+		
+	}	
+	
 
 	private void buildPoliticalTopicsList()
 	{
+		politicsList.add("Democrat");
+		politicsList.add("Republican");
+		politicsList.add("conservative");
+		politicsList.add("11/8/6");
+		politicsList.add("Clinton");
+		politicsList.add("Trump");
+		politicsList.add("Kaine");
+		politicsList.add("Pence");
+		politicsList.add("Stein");
+		politicsList.add("Johnson");
+		politicsList.add("election");
+		politicsList.add("president");
+		politicsList.add("debate");
+		politicsList.add("vote");
+		politicsList.add("liberal");
+		
 	}
 
 	/**
@@ -59,7 +98,13 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String currentInput)
 	{
-		return false;
+		boolean hasContent = false;
+		if (currentInput.contains(content))
+		{
+			hasContent = true;
+		}
+		
+		return hasContent;
 	}
 
 	/**
@@ -122,7 +167,7 @@ public class Chatbot
 	 */
 	public ArrayList<String> getPoliticalTopicList()
 	{
-		return politicalTopicList;
+		return politicsList;
 	}
 
 	/**
@@ -131,6 +176,7 @@ public class Chatbot
 	 */
 	public void setContent(String content)
 	{
+		this.content = content;
 	}
 
 }
