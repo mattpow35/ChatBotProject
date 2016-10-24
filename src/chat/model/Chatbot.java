@@ -68,7 +68,9 @@ public class Chatbot
 		politicsList.add("politics");
 		politicsList.add("white house");
 		politicsList.add("vice president");
-		
+		politicsList.add("campaign");
+		politicsList.add("Hillary");
+		politicsList.add("11/8/2016");
 	}
 
 	/**
@@ -123,10 +125,13 @@ public class Chatbot
 	{
 		boolean isPolitical = false;
 		
-		for(String buildPoliticalTopicList : politicsList)
+		for(String checkPolitical : politicsList)
 		{
-			if(currentInput.equals(buildPoliticalTopicList));
-			isPolitical = true;
+			if(currentInput.equals(checkPolitical))
+			{
+				isPolitical = true;	
+			}
+			
 		}
 		
 		return isPolitical;
@@ -142,7 +147,17 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		return false;
+		boolean isMeme = false;
+		
+		for (String checkMeme : memesList)
+		{
+			if(currentInput.equalsIgnoreCase(checkMeme))
+			{
+				isMeme = true;
+			}
+		}
+		
+		return isMeme;
 	}
 
 	/**
