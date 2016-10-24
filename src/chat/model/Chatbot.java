@@ -20,7 +20,7 @@ public class Chatbot
 		politicsList = new ArrayList<String>();
 		buildPoliticalTopicsList();
 		this.userName = userName;
-		this.content = "content";
+		this.content = "lacrosse";
 	}
 
 	private void buildMemesList()
