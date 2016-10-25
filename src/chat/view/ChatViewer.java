@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 public class ChatViewer
 {
+	
 	public String collectResponse(String question)
 	{
 		String response = "";
