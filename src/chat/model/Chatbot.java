@@ -89,7 +89,6 @@ public class Chatbot
 			hasLength = true;
 		}
 		
-		
 		return  hasLength;
 	}
 
@@ -204,5 +203,12 @@ public class Chatbot
 	{
 		this.content = content;
 	}
+	
+//	public boolean quitChecker(String input)
+//	{
+//		boolean checkQuit = false;
+//		
+//		return checkQuit;
+//	}
 
 }
