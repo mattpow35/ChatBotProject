@@ -20,8 +20,8 @@ public class ChatbotController
 		
 		while(stupidBot.lengthChecker(response))
 		{
-			display.displayMessage(useChatbotCheckers(response));
 			display.collectResponse("Oh you want to talk bout " + response +"? Tell me more...");
+			display.displayMessage(useChatbotCheckers(response));
 			
 		}
 	}
