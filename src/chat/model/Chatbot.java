@@ -204,11 +204,20 @@ public class Chatbot
 		this.content = content;
 	}
 	
-//	public boolean quitChecker(String input)
-//	{
-//		boolean checkQuit = false;
-//		
-//		return checkQuit;
-//	}
+	public boolean quitChecker(String currentInput)
+	{
+		boolean checkQuit = false;
+		
+		if (currentInput.equals("exit"))
+		{
+			checkQuit = false;
+		}
+		if (currentInput.equals("quit"))
+		{
+			checkQuit = true;
+		}
+		
+		return checkQuit;
+	}
 
 }
