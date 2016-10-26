@@ -28,7 +28,7 @@ public class ChatbotController
 	
 	private String useChatbotCheckers(String input)
 	{
-		String checkedInput = "I have no idea what you mean about " + input;
+		String checkedInput = "";
 		
 		if (stupidBot.memeChecker(input))
 		{
@@ -37,6 +37,10 @@ public class ChatbotController
 		if (stupidBot.contentChecker(input))
 		{
 			checkedInput += "\nYou know my secret topic!\n";
+		}
+		if (checkedInput.length() == 0)
+		{
+			checkedInput = "I have no idea what you mean about " + input;
 		}
 		
 		return checkedInput;
