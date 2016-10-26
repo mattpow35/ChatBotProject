@@ -220,6 +220,19 @@ public class Chatbot
 		return checkQuit;
 	}
 	
-	
+	public boolean keyboardMashChecker(String currentInput)
+	{
+		boolean isMashed = false;
+		if (currentInput.contains("S.D.F.") || currentInput.contains("derf"))
+		{
+			isMashed = false;
+		}
+		if (currentInput.contains("sdf") || currentInput.contains("dfg") || currentInput.contains("cvb") || currentInput.contains(",./"))
+		{
+			isMashed = true;
+		}
+		
+		return isMashed;
+	}
 
 }
