@@ -117,7 +117,8 @@ public class Chatbot
 	 * does not match.
 	 * 
 	 * @param currentInput
-	 *            The supplied String to be checked. * @return Whether the
+	 *            The supplied String to be checked.
+	 * @return Whether the
 	 *            String is contained in the ArrayList.
 	 */
 	public boolean politicalTopicChecker(String currentInput)
