@@ -250,5 +250,12 @@ public class Chatbot
 		
 		return twitterChecker;
 	}
+	
+	public boolean inputHTMLChecker(String curretnInput)
+	{
+		boolean htmlChecker = false;
+		
+		return htmlChecker;
+	}
 
 }
