@@ -235,5 +235,20 @@ public class Chatbot
 		
 		return isMashed;
 	}
+	
+	public boolean twitterChecker(String currentInput)
+	{
+		boolean twitterChecker = false;
+		if (currentInput.equals(" ") || currentInput.equals("sdfsd #") || currentInput.equals("sdfsd @"))
+		{
+			twitterChecker = false;
+		}
+		if (currentInput.equals("#dw35 f") || currentInput.equals("@d4d sretsf"))
+		{
+			twitterChecker = true;
+		}
+		
+		return twitterChecker;
+	}
 
 }
