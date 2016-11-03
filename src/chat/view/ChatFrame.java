@@ -1,20 +1,21 @@
 package chat.view;
 
 import javax.swing.JFrame;
-import chat.controller.ChatbotController;
+import chat.controller.ChatController;
 import java.awt.Dimension;
 
 public class ChatFrame extends JFrame
 {
-	private ChatbotController baseFrame;
+	private ChatController baseController;
+	private ChatFrame baseFrame;
 	
-	public ChatFrame(ChatbotController baseFrame)
+	public ChatFrame(ChatController baseController)
 	{
 		super();
-		this.baseFrame = baseFrame;
-		
+		this.baseController = baseController;
 		
 		setupFrame();
+		
 	}
 	
 	private void setupFrame()

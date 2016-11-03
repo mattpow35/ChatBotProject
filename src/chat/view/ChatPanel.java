@@ -1,30 +1,32 @@
 package chat.view;
 
-import javax.swing.JPanel;
-import javax.swing.JButton;
 import javax.swing.SpringLayout;
-import chat.controller.ChatbotController;
-import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import chat.controller.ChatController;
+import javax.swing.JPanel;
 
-public class ChatPanel
+public class ChatPanel extends JPanel
 {
-	private ChatbotController basePanel;
-	private JButton chatButton;
+	private ChatController basePanel;
 	private SpringLayout baseLayout;
 
-	public ChatPanel(ChatbotController basePanel)
+	public ChatPanel(ChatController basePanel)
 	{
 		super();
+		this.basePanel = basePanel;
 		
 		baseLayout = new SpringLayout();
-		setupPanel();
+		SetupPanel();
+		SetupListeners();
 	}
 	
-	private void setupPanel()
+	private void SetupPanel()
 	{
-		this.setLayout(baseLayout);
+		
+		
+	}
+	
+	private void SetupListeners()
+	{
 		
 	}
 }
