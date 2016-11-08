@@ -239,14 +239,24 @@ public class Chatbot
 	public boolean twitterChecker(String currentInput)
 	{
 		boolean twitterChecker = false;
-		if (currentInput.equals(" ") || currentInput.equals("sdfsd #") || currentInput.equals("sdfsd @"))
+		int hashtagIndex = -99;
+		int userIndex = -99;
+		
+		hashtagIndex = currentInput.indexOf("#");
+		userIndex = currentInput.indexOf("@");
+		
+		if (userIndex == -1 && hashtagIndex == -1)
 		{
 			twitterChecker = false;
 		}
-		if (currentInput.equals("#dw35 f") || currentInput.equals("@d4d sretsf "))
+		else
 		{
-			twitterChecker = true;
+			if (!currentInput.substring(hashtagIndex +1, hashtagIndex +2).equals(" ") || !currentInput.substring(userIndex +1, userIndex +2).equals(" "))
+			{
+				twitterChecker = true;
+			}
 		}
+	
 		
 		return twitterChecker;
 	}
