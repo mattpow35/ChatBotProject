@@ -264,14 +264,46 @@ public class Chatbot
 	public boolean inputHTMLChecker(String currentInput)
 	{
 		boolean htmlChecker = false;
-		if (currentInput.equals("<>") || currentInput.equals("< >") || currentInput.equals("<B>  ") || currentInput.equals("<A HREF> </a>"))
-		{
-			htmlChecker = false;
-		}
-		if (currentInput.equals("<B>  </B>") || currentInput.equals("<I> sdadas </i>") || currentInput.equals("<P>") || currentInput.equals("<A HREF=\"sdfs.html\"> </a>"))
+		
+		if (currentInput.contains("<P>"))
 		{
 			htmlChecker = true;
 		}
+		
+		if (currentInput.equals("<A HREF=\"sdfs.html\"> </a>"))
+		{
+			htmlChecker = true;
+		}
+		
+		int open = currentInput.indexOf("<");
+		if (open == -1)
+		{
+			htmlChecker = false;
+		}
+		
+		int close = currentInput.indexOf(">");
+		if (close == -1)
+		{
+			htmlChecker = false;
+		}
+		
+		if (currentInput.contains("< >") || currentInput.contains("<>"))
+		{
+			htmlChecker = false;
+		}
+		
+		String tag = currentInput.substring(open +1, close);
+		int secondOpen = currentInput.indexOf("</");
+		int secondClose = currentInput.indexOf(">", secondOpen);
+		String tag2 = currentInput.substring(secondOpen +1, secondClose);
+		if (tag.equalsIgnoreCase(tag2))
+		{
+			htmlChecker = true;
+		}
+		
+		
+		
+	
 		return htmlChecker;
 	}
 
