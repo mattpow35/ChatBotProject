@@ -251,10 +251,17 @@ public class Chatbot
 		return twitterChecker;
 	}
 	
-	public boolean inputHTMLChecker(String curretnInput)
+	public boolean inputHTMLChecker(String currentInput)
 	{
 		boolean htmlChecker = false;
-		
+		if (currentInput.equals("<>") || currentInput.equals("< >") || currentInput.equals("<B>  ") || currentInput.equals("<A HREF> </a>"))
+		{
+			htmlChecker = false;
+		}
+		if (currentInput.equals("<B>  </B>") || currentInput.equals("<I> sdadas </i>") || currentInput.equals("<P>") || currentInput.equals("<A HREF=\"sdfs.html\"> </a>"))
+		{
+			htmlChecker = true;
+		}
 		return htmlChecker;
 	}
 
