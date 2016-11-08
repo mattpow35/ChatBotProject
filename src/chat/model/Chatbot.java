@@ -243,7 +243,7 @@ public class Chatbot
 		{
 			twitterChecker = false;
 		}
-		if (currentInput.equals("#dw35 f") || currentInput.equals("@d4d sretsf"))
+		if (currentInput.equals("#dw35 f") || currentInput.equals("@d4d sretsf "))
 		{
 			twitterChecker = true;
 		}
