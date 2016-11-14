@@ -297,11 +297,11 @@ public class Chatbot
 			htmlChecker = true;
 		}
 		
-		else if (currentInput.equals("<" + tag + ">  "))
-		{
-			htmlChecker = false;
-		}
-		
+//		else if (currentInput.equals("<" + tag + ">  "))
+//		{
+//			htmlChecker = false;
+//		}
+//		
 		
 		return htmlChecker;
 	}
