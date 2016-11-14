@@ -270,13 +270,13 @@ public class Chatbot
 		String tag = currentInput.substring(open +1, close);
 		int secondOpen = currentInput.indexOf("</");
 		int secondClose = currentInput.indexOf(">", secondOpen);
-		String tag2 = currentInput.substring(secondOpen +1, secondClose);
+		String tag2 = currentInput.substring(secondOpen +2, secondClose);
 		
 		if (open == -1 && close == -1)
 		{
 			htmlChecker = false;
 		}
-		
+	
 		else if (currentInput.contains("<P>"))
 		{
 			htmlChecker = true;
@@ -292,10 +292,14 @@ public class Chatbot
 			htmlChecker = false;
 		}
 		
-		
 		else if (tag.equalsIgnoreCase(tag2))
 		{
 			htmlChecker = true;
+		}
+		
+		else if (currentInput.equals("<" + tag + ">  "))
+		{
+			htmlChecker = false;
 		}
 		
 		

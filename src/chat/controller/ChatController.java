@@ -50,16 +50,16 @@ public class ChatController
 		
 		if (stupidBot.keyboardMashChecker(input))
 		{
-			checkedInput += "\nYou just mashed random things on the keyboard";
+			checkedInput += "\nYou just mashed random things on the keyboard\n";
 		}
 		if (stupidBot.twitterChecker(input))
 		{
 			checkedInput +="\nYou want to talk about twitter\n";
 		}
-		if (stupidBot.inputHTMLChecker(input))
-		{
-			checkedInput += "\nYou want to talk about HTML\n";
-		}
+//		if (stupidBot.inputHTMLChecker(input))
+//		{
+//			checkedInput += "\nYou want to talk about HTML\n";
+//		}
 		if (stupidBot.quitChecker(input))
 		{
 			checkedInput += "\nYou want to quit the chatbot :(\n";
