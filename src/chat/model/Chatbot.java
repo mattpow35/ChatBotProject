@@ -289,10 +289,10 @@ public class Chatbot
 			htmlChecker = false;
 		}
 		
-		else if (currentInput.contains(open + "A HREF=\"" + "\""+ close + " " + secondOpen + tag2 + secondClose))
-		{
-			htmlChecker = true;
-		}
+//		else if (currentInput.contains(open + "A HREF=\"" + "\""+ close + " " + secondOpen + tag2 + secondClose))
+//		{
+//			htmlChecker = true;
+//		}
 	
 //		else if (currentInput.equals("<A HREF=\"sdfs.html\"> </a>"))
 //		{
