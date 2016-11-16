@@ -151,7 +151,7 @@ public class Chatbot
 		
 		for (String checkMeme : memesList)
 		{
-			if(currentInput.equalsIgnoreCase(checkMeme))
+			if(currentInput.toLowerCase().contains(checkMeme))
 			{
 				isMeme = true;
 			}
@@ -268,20 +268,27 @@ public class Chatbot
 		int close = currentInput.indexOf(">");
 		int open = currentInput.indexOf("<");
 		String tag = currentInput.substring(open +1, close);
+		int hasTag = currentInput.indexOf("<"+tag+">");
 		int secondOpen = currentInput.indexOf("</");
 		int secondClose = currentInput.indexOf(">", secondOpen);
 		String tag2 = currentInput.substring(secondOpen +2, secondClose);
+		int hasTag2 = currentInput.indexOf("</"+tag2+">");
 		
 		if (open == -1 && close == -1)
 		{
 			htmlChecker = false;
 		}
-	
+		
 		else if (currentInput.contains("<P>"))
 		{
 			htmlChecker = true;
 		}
 		
+		else if (hasTag2 == -1)
+		{
+			htmlChecker = false;
+		}
+	
 		else if (currentInput.equals("<A HREF=\"sdfs.html\"> </a>"))
 		{
 			htmlChecker = true;
@@ -297,11 +304,7 @@ public class Chatbot
 			htmlChecker = true;
 		}
 		
-//		else if (currentInput.equals("<" + tag + ">  "))
-//		{
-//			htmlChecker = false;
-//		}
-//		
+
 		
 		return htmlChecker;
 	}

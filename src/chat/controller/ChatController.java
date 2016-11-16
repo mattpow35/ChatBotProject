@@ -70,12 +70,12 @@ public class ChatController
 		return checkedInput;
 	}
 	
-	private ChatFrame getBaseFrame()
+	public ChatFrame getBaseFrame()
 	{
 		return baseFrame;
 	}
 	
-	private Chatbot getChatbot()
+	public Chatbot getChatbot()
 	{
 		return stupidBot;
 	}
