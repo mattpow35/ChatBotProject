@@ -58,10 +58,10 @@ public class ChatController
 		{
 			checkedInput +="\nYou want to talk about twitter\n";
 		}
-//		if (stupidBot.inputHTMLChecker(input))
-//		{
-//			checkedInput += "\nYou want to talk about HTML\n";
-//		}
+		if (stupidBot.inputHTMLChecker(input))
+		{
+			checkedInput += "\nYou want to talk about HTML\n";
+		}
 		if (stupidBot.quitChecker(input))
 		{
 			checkedInput += "\nYou want to quit the chatbot :(\n";
