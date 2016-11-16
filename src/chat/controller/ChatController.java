@@ -20,14 +20,14 @@ public class ChatController
 	
 	public void start()
 	{
-		String response = display.collectResponse("What do you want to talk about????");
-		
-		while(stupidBot.lengthChecker(response))
-		{
-			display.collectResponse("Oh you want to talk bout " + response +"? Tell me more...");
-			display.displayMessage(useChatbotCheckers(response));
-			
-		}
+//		String response = display.collectResponse("What do you want to talk about????");
+//		
+//		while(stupidBot.lengthChecker(response))
+//		{
+//			display.collectResponse("Oh you want to talk bout " + response +"? Tell me more...");
+//			display.displayMessage(useChatbotCheckers(response));
+//			
+//		}
 	}
 	
 	public String useChatbotCheckers(String input)
