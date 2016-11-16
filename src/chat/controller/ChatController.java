@@ -2,16 +2,19 @@ package chat.controller;
 
 import chat.model.Chatbot;
 import chat.view.ChatViewer;
+import chat.view.ChatFrame;
 
 public class ChatController
 {
 	private Chatbot stupidBot;
 	private ChatViewer display;
+	private ChatFrame baseFrame;
 	
 	public ChatController()
 	{
 		stupidBot = new Chatbot("stupid robot");
 		display = new ChatViewer();
+		baseFrame = new ChatFrame(this);
 		
 	}
 	
@@ -27,7 +30,7 @@ public class ChatController
 		}
 	}
 	
-	private String useChatbotCheckers(String input)
+	public String useChatbotCheckers(String input)
 	{
 		String checkedInput = "";
 		
@@ -47,7 +50,6 @@ public class ChatController
 		{
 			checkedInput += "\nYou want to talk about politics.\n";
 		}
-		
 		if (stupidBot.keyboardMashChecker(input))
 		{
 			checkedInput += "\nYou just mashed random things on the keyboard\n";
@@ -67,4 +69,17 @@ public class ChatController
 		
 		return checkedInput;
 	}
+	
+	private ChatFrame getBaseFrame()
+	{
+		return baseFrame;
+	}
+	
+	private Chatbot getChatbot()
+	{
+		return stupidBot;
+	}
+	
+	
 }
+
