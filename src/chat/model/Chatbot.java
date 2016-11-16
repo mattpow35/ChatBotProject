@@ -265,8 +265,8 @@ public class Chatbot
 	{
 		boolean htmlChecker = false;
 		
-		int close = currentInput.indexOf(">");
 		int open = currentInput.indexOf("<");
+		int close = currentInput.indexOf(">");
 		String tag = currentInput.substring(open +1, close);
 		int hasTag = currentInput.indexOf("<"+tag+">");
 		int secondOpen = currentInput.indexOf("</");
