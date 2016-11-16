@@ -279,7 +279,7 @@ public class Chatbot
 			htmlChecker = false;
 		}
 		
-		else if (currentInput.contains("<P>"))
+		else if (currentInput.equals("<P>"))
 		{
 			htmlChecker = true;
 		}
@@ -287,6 +287,11 @@ public class Chatbot
 		else if (hasTag2 == -1)
 		{
 			htmlChecker = false;
+		}
+		
+		else if (currentInput.contains(open + "A HREF=\"" + "\""+ close + " " + secondOpen + tag2 + secondClose))
+		{
+			htmlChecker = true;
 		}
 	
 //		else if (currentInput.equals("<A HREF=\"sdfs.html\"> </a>"))
