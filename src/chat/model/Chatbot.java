@@ -274,7 +274,15 @@ public class Chatbot
 		String tag2 = currentInput.substring(secondOpen +2, secondClose);
 		int hasTag2 = currentInput.indexOf("</"+tag2+">");
 		
+		int hrefTag = currentInput.indexOf("=\"");
+		int closeHREFTag= currentInput.indexOf("\"", hrefTag);
+		
 		if (open == -1 && close == -1)
+		{
+			htmlChecker = false;
+		}
+	
+		else if (currentInput.contains("< >") || currentInput.contains("<>"))
 		{
 			htmlChecker = false;
 		}
@@ -289,27 +297,16 @@ public class Chatbot
 			htmlChecker = false;
 		}
 		
-//		else if (currentInput.contains(open + "A HREF=\"" + "\""+ close + " " + secondOpen + tag2 + secondClose))
-//		{
-//			htmlChecker = true;
-//		}
-	
-//		else if (currentInput.equals("<A HREF=\"sdfs.html\"> </a>"))
-//		{
-//			htmlChecker = true;
-//		}
-		
-		else if (currentInput.contains("< >") || currentInput.contains("<>"))
-		{
-			htmlChecker = false;
-		}
-		
 		else if (tag.equalsIgnoreCase(tag2))
 		{
 			htmlChecker = true;
 		}
 		
-
+		else if (currentInput.substring(open +1, hrefTag ) == "A HREF" && closeHREFTag != -1 );
+		{
+			htmlChecker = true;
+		}
+		
 		
 		return htmlChecker;
 	}
