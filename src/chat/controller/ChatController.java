@@ -70,6 +70,42 @@ public class ChatController
 		return checkedInput;
 	}
 	
+	private String randomTopicGenerator()
+	{
+		String randomTopic = "";
+		int random = (int) (Math.random() * 7);
+		
+		switch(random)
+		{
+		case 0:
+			randomTopic = "Did you hear about the daft punk beastie boys mix?";
+			break;
+		case 1:
+			randomTopic = "can you bring me the sriracha";
+			break;
+		case 2:
+			randomTopic = "Writing code is lots of fun";
+			break;
+		case 3:
+			randomTopic = "Did you hear about those new dank memes?";
+			break;
+		case 4:
+			randomTopic = "Politics is so crazy right now!";
+			break;
+		case 5:
+			randomTopic = "I really love to play lacrosse";
+			break;
+		case 6:
+			randomTopic = "Do you have a twitter?";
+			break;
+		default:
+			randomTopic = "This can't be happening!!";
+			break;
+		}
+		
+		return randomTopic;
+	}
+	
 	public ChatFrame getBaseFrame()
 	{
 		return baseFrame;
