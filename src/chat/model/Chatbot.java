@@ -302,7 +302,7 @@ public class Chatbot
 			htmlChecker = true;
 		}
 		
-		else if (currentInput.substring(open +1, hrefTag ) == "A HREF" && closeHREFTag != -1 );
+		else if (hrefTag != -1 && currentInput.substring(open +1, hrefTag ).equals("A HREF") && closeHREFTag != -1 )
 		{
 			htmlChecker = true;
 		}
