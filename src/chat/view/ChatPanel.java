@@ -19,7 +19,10 @@ public class ChatPanel extends JPanel
 	private JTextField chatField;
 	private JButton chatButton;
 	private JLabel chatLabel;
-
+/**
+ * the controller for chatpanel. It initializes all of the data members and starts all of the helper methods. (setup methods)
+ * @param baseController
+ */
 	public ChatPanel(ChatController baseController)
 	{
 		super();
