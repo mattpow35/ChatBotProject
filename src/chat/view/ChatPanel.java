@@ -7,7 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChatPanel extends JPanel
-{
+{ 
+	/**
+	 * data members that are needed in order to build the chatpanel.
+	 * The chatpanel will use the controller, springlayout, a JTextField,
+	 * a JButton, and a JLabel.
+	 */
 	private ChatController baseController;
 	private SpringLayout baseLayout;
 	private JTextArea chatDisplay;
@@ -33,6 +38,11 @@ public class ChatPanel extends JPanel
 		setupListeners();
 	}
 	
+	/**
+	 * Sets up the display on the GUI so that it is neither editable or enabled.
+	 * It also wraps the text so it goes on to the next line and fits inside the display. 
+	 * 
+	 */
 	private void setupChatDisplay()
 	{
 		chatDisplay.setEditable(false);
@@ -41,6 +51,11 @@ public class ChatPanel extends JPanel
 		chatDisplay.setLineWrap(true);
 	}
 	
+	/**
+	 * Sets up the panel, defines the type of layout, changes background color, 
+	 * adds a button text field display and label.
+	 * sets the visibility to true so that we can see and use the panel.
+	 */
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
@@ -53,6 +68,9 @@ public class ChatPanel extends JPanel
 		
 	}
 	
+	/**
+	 * All of the unwanted auto generated code that came from the design window.
+	 */
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 187, SpringLayout.NORTH, this);
@@ -66,6 +84,10 @@ public class ChatPanel extends JPanel
 		
 	}
 	
+	/**
+	 * sets up all of the "listeners" aka buttons. 
+	 * gives the button a function and makes it so something happens when it is clicked.
+	 */
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
