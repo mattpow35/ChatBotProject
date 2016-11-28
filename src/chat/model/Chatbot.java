@@ -1,7 +1,11 @@
 package chat.model;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Matt Powley
+ *
+ */
 public class Chatbot
 {
 	private ArrayList<String> memesList;
