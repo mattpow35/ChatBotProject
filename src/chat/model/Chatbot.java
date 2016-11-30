@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * 
  * @author Matt Powley
- *
+ * chatbot model class
  */
 public class Chatbot
 {

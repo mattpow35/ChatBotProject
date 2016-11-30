@@ -97,10 +97,10 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				String personsWords = chatField.getText();
-				String chatbotResponse = baseController.useChatbotCheckers(personsWords);
+				String input = chatField.getText();
+				String chatbotResponse = baseController.useChatbotCheckers(input);
 				
-				chatDisplay.setText("You said: " + personsWords +"\n"+ "Chatbot says " + chatbotResponse);
+				chatDisplay.setText("You said: " + input +"\n"+ "Chatbot says " + chatbotResponse);
 				chatField.setText("");
 			}
 		});

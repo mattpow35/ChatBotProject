@@ -62,10 +62,6 @@ public class ChatController
 			{
 				checkedInput += "\nYou want to talk about HTML\n";
 			}
-			if (stupidBot.quitChecker(input))
-			{
-				checkedInput += "\nYou want to quit the chatbot :(\n";
-			}
 			
 			int canBeRandom= (int) (Math.random() *2);
 			if(canBeRandom % 2 == 0)
