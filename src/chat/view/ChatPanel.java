@@ -27,12 +27,12 @@ public class ChatPanel extends JPanel
 	{
 		super();
 		this.baseController = baseController;
-		
 		baseLayout = new SpringLayout();
 		chatDisplay = new JTextArea(5, 25);
 		chatField = new JTextField(25);
 		chatButton = new JButton("Chat with the bot");
 		chatLabel = new JLabel("Welcome to Chatbot");
+		
 		
 		
 		setupChatDisplay();
@@ -76,15 +76,17 @@ public class ChatPanel extends JPanel
 	 */
 	private void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 187, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 63, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatButton);
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -12, SpringLayout.NORTH, chatButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatDisplay, 45, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatDisplay, 63, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, chatLabel, 10, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatLabel, 135, SpringLayout.WEST, this);
-		
+		baseLayout.putConstraint(SpringLayout.WEST, chatDisplay, 63, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatDisplay, -110, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatDisplay, 363, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 24, SpringLayout.SOUTH, chatField);
+		baseLayout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatButton);
+		baseLayout.putConstraint(SpringLayout.EAST, chatField, 314, SpringLayout.WEST, chatButton);
+		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 61, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatDisplay, 19, SpringLayout.SOUTH, chatLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatField, 5, SpringLayout.SOUTH, chatDisplay);
 	}
 	
 	/**
