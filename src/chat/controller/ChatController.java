@@ -36,12 +36,17 @@ public class ChatController
 		
 			if (stupidBot.memeChecker(input))
 			{
-				checkedInput += "\nYou like dank memes!\n ";
+				checkedInput += "\nYou like dank memes! I love dank memes also!!\n ";
 			}
 			if (stupidBot.contentChecker(input))
 			{
 				checkedInput += "\nYou know my secret topic!\n";
 			}
+			if (input.equals(""))
+			{
+				checkedInput += "\n You did not type anything\n";
+			}
+
 			if (checkedInput.length() == 0)
 			{
 				checkedInput = "I have no idea what you mean about " + input;
@@ -62,7 +67,7 @@ public class ChatController
 			{
 				checkedInput += "\nYou want to talk about HTML\n";
 			}
-			
+						
 			int canBeRandom= (int) (Math.random() *2);
 			if(canBeRandom % 2 == 0)
 			{
@@ -87,28 +92,28 @@ public class ChatController
 		switch(random)
 		{
 		case 0:
-			randomTopic = "Did you hear about the daft punk beastie boys mix?";
+			randomTopic = "\nDid you hear about the daft punk beastie boys mix?\n";
 			break;
 		case 1:
-			randomTopic = "can you bring me the sriracha";
+			randomTopic = "\nDo you play lacrosse?\n";
 			break;
 		case 2:
-			randomTopic = "Writing code is lots of fun";
+			randomTopic = "\nWriting code is lots of fun\n";
 			break;
 		case 3:
-			randomTopic = "Did you hear about those new dank memes?";
+			randomTopic = "\nDid you hear about those new dank memes? What is your favorite meme?\n";
 			break;
 		case 4:
-			randomTopic = "Politics is so crazy right now!";
+			randomTopic = "\nPolitics is so crazy right now!\n";
 			break;
 		case 5:
-			randomTopic = "I really love to play lacrosse";
+			randomTopic = "\nI really love to play lacrosse\n";
 			break;
 		case 6:
-			randomTopic = "Do you have a twitter?";
+			randomTopic = "\nDo you have a twitter? What is you username or favorite hashtag?\n";
 			break;
 		default:
-			randomTopic = "This can't be happening!!";
+			randomTopic = "\nThis can't be happening!!\n";
 			break;
 		}
 		
