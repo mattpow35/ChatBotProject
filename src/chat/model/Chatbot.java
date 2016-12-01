@@ -8,6 +8,10 @@ import java.util.ArrayList;
  */
 public class Chatbot
 {
+	/*
+	 * creates the two array lists for memes and political topics.
+	 * creates String instance of userName and content.
+	 */
 	private ArrayList<String> memesList;
 	private ArrayList<String> politicsList;
 	private String userName;
@@ -26,7 +30,10 @@ public class Chatbot
 		this.userName = userName;
 		this.content = "lacrosse";
 	}
-
+	/*
+	 * creates the list with all possible memes 
+	 * that chatbot recognizes.
+	 */
 	private void buildMemesList()
 	{
 		memesList.add("doge");
@@ -51,7 +58,10 @@ public class Chatbot
 		
 	}	
 	
-
+	/*
+	 * creates the list with all possible politcal
+	 * topics that chatbot recognizes.
+	 */
 	private void buildPoliticalTopicsList()
 	{
 		politicsList.add("Democrat");
@@ -208,7 +218,10 @@ public class Chatbot
 	{
 		this.content = content;
 	}
-	
+	/*
+	 * checks to see if user wants to quit the program.
+	 * if quit is typed the it returns true and the quit method will execute.
+	 */
 	public boolean quitChecker(String currentInput)
 	{
 		boolean checkQuit = false;
@@ -224,7 +237,9 @@ public class Chatbot
 		
 		return checkQuit;
 	}
-	
+	/*
+	 * checks to see if the keyboard was randomly mashed.
+	 */
 	public boolean keyboardMashChecker(String currentInput)
 	{
 		boolean isMashed = false;
@@ -239,7 +254,10 @@ public class Chatbot
 		
 		return isMashed;
 	}
-	
+	/*
+	 * checks for references to twitter
+	 * checks for hashtags and usernames.
+	 */
 	public boolean twitterChecker(String currentInput)
 	{
 		boolean twitterChecker = false;
@@ -264,7 +282,10 @@ public class Chatbot
 		
 		return twitterChecker;
 	}
-	
+	/*
+	 * checks for HTML references and tags
+	 * checks to see if the user is talking about HTML.
+	 */
 	public boolean inputHTMLChecker(String currentInput)
 	{
 		boolean htmlChecker = false;

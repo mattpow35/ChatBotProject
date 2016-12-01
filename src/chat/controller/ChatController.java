@@ -13,7 +13,9 @@ public class ChatController
 	private Chatbot stupidBot;
 	private ChatViewer display;
 	private ChatFrame baseFrame;
-	
+	/*
+	 * initializes data members for chatbot chatviewer and chatframe.
+	 */
 	public ChatController()
 	{
 		stupidBot = new Chatbot("stupid robot");
@@ -27,7 +29,10 @@ public class ChatController
 		
 
 	}
-	
+	/*
+	 * method used for the checkers
+	 * used for the chabot to tell what the user is talking about.
+	 */
 	public String useChatbotCheckers(String input)
 	{
 		String checkedInput = "";
@@ -83,7 +88,9 @@ public class ChatController
 		
 		return checkedInput;
 	}
-	
+	/*
+	 * creates a random topic that chatbot will talk about.
+	 */
 	private String randomTopicGenerator()
 	{
 		String randomTopic = "";

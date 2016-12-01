@@ -3,7 +3,11 @@ package chat.view;
 import javax.swing.JFrame;
 import chat.controller.ChatController;
 import java.awt.Dimension;
-
+/*
+ * Author: Matt Powley
+ * GUI frame class, builds the frame that the panel will
+ * be placed in.
+ */
 public class ChatFrame extends JFrame
 {
 	private ChatController baseController;
@@ -18,7 +22,9 @@ public class ChatFrame extends JFrame
 		setupFrame();
 		
 	}
-	
+	/*
+	 * sets up the frame making it visible and sets dimensions.
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel);
