@@ -18,7 +18,7 @@ public class FileController
 			}
 			else
 			{
-				saveFile = new File("chatBot saved file.txt");
+				saveFile = new File("default chatBot saved file.txt");
 			}
 			FileWriter saveFileWriter = new FileWriter(saveFile);
 			saveFileWriter.write(contents);
