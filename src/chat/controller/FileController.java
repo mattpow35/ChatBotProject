@@ -3,6 +3,7 @@ package chat.controller;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -21,7 +22,11 @@ public class FileController
 			}
 			else
 			{
-				saveFile = new File("default chatBot saved file.txt");
+				String saveName = LocalDateTime.now().getDayOfWeek().name() + ", ";
+				saveName += LocalDateTime.now().getHour();
+				saveName += ".";
+				saveName += LocalDateTime.now().getMinute();
+				saveFile = new File(saveName);
 			}
 			FileWriter saveFileWriter = new FileWriter(saveFile);
 			saveFileWriter.write(contents);

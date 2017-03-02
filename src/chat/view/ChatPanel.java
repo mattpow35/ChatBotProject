@@ -165,8 +165,8 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				String fileName = chatField.getText();
-				String saved = FileController.readFile(baseController, fileName + ".txt");
+				String fileName = chatField.getText() + ".txt";
+				String saved = FileController.readFile(baseController, fileName);
 				chatDisplay.setText(saved);
 			}
 		});
