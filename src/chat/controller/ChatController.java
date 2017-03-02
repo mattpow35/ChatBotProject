@@ -88,6 +88,7 @@ public class ChatController
 		
 		return checkedInput;
 	}
+
 	/*
 	 * creates a random topic that chatbot will talk about.
 	 */
@@ -102,7 +103,7 @@ public class ChatController
 			randomTopic = "\nDid you hear about the daft punk beastie boys mix?\n";
 			break;
 		case 1:
-			randomTopic = "\nDo you play lacrosse?\n";
+			randomTopic = "\nDo you play any sports?\n";
 			break;
 		case 2:
 			randomTopic = "\nWriting code is lots of fun\n";
@@ -111,7 +112,7 @@ public class ChatController
 			randomTopic = "\nDid you hear about those new dank memes? What is your favorite meme?\n";
 			break;
 		case 4:
-			randomTopic = "\nPolitics is so crazy right now!\n";
+			randomTopic = "\nPolitics are so crazy right now!\n";
 			break;
 		case 5:
 			randomTopic = "\nI really love to play lacrosse\n";
@@ -125,6 +126,12 @@ public class ChatController
 		}
 		
 		return randomTopic;
+	}
+	
+	public void handleErrors(Exception currentException)
+	{
+		display.displayMessage("An error has occured. Details provided next.");
+		display.displayMessage(currentException.getMessage());
 	}
 	
 	public ChatFrame getBaseFrame()
