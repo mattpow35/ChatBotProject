@@ -143,6 +143,11 @@ public class ChatController
 	{
 		return stupidBot;
 	}
+	 
+	public ChatViewer getDisplay()
+	{
+		return display;
+	}
 	
 	
 }

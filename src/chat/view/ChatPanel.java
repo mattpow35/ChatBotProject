@@ -95,6 +95,7 @@ public class ChatPanel extends JPanel
 		this.add(saveButton);
 		this.add(postButton);
 		this.add(searchButton);
+		saveButton.setToolTipText("Put a naem in the textField for file name");
 		this.setVisible(true);
 		
 	}
@@ -157,6 +158,16 @@ public class ChatPanel extends JPanel
 				String fileName = chatField.getText();
 				
 				FileController.saveFile(baseController, fileName, chatDisplay.getText());
+			}
+		});
+		
+		openButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String fileName = chatField.getText();
+				String saved = FileController.readFile(baseController, fileName + ".txt");
+				chatDisplay.setText(saved);
 			}
 		});
 	}
