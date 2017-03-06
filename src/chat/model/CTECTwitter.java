@@ -39,5 +39,26 @@ public class CTECTwitter
 			baseController.handleErrors(otherError);
 		}
 	}
+	
+	
+	// To find the most common tweet
+	// create two lists. one of common words and one of the persons tweets.
+	// Create a .txt file of all the persons tweets to make the list.
+	// count the occurance of all the words in the persons tweets and return the greatest one
+	// ignore all words from common list.
+	private void createIgnoredWordList()
+	{
+		
+	}
+	
+	private void collectTweets(String username)
+	{
+		
+	}
+	
+	public String getMostCommonWord()
+	{
+		return null;
+	}
 
 }
