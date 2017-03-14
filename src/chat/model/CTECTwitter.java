@@ -166,6 +166,7 @@ public class CTECTwitter
 			}
 		}
 	}
+	
 
 	private String calculatePopularWord()
 	{
@@ -220,12 +221,29 @@ public class CTECTwitter
 		
 	}
 	
-	public String getMostCommonHashtagAtBrighton(String hashtag)
+	private void keepOnlyHashtags()
+	{
+		for (int index = 0; index < tweetedWords.size(); index ++)
+		{
+			if(tweetedWords.get(index).substring(0, 1).equals("#"))
+			{
+				tweetedHashtags.add(tweetedWords.get(index));
+			}
+		}
+	}
+	
+	public String getMostCommonHashtagAtBrighton()
 	{
 		String results = "";
 		collectTweetsFromBrighton();
+		turnStatusesToWords();
 		
-		results += "there are " + searchedTweets.size() + " tweets within 5 miles of brighton.";
+		removeAllBoringWords();
+		removeEmptyText();
+		removeMentions();
+		keepOnlyHashtags();
+		
+		results += calculatePopularHashtag();
 		return results;
 	}
 	
@@ -233,6 +251,7 @@ public class CTECTwitter
 	{
 		searchedTweets.clear();
 		tweetedHashtags.clear();
+		tweetedWords.clear();
 		
 		Query query = new Query();
 		query.setGeoCode(brightonHigh, 5, Query.MILES);
@@ -272,5 +291,43 @@ public class CTECTwitter
 			
 		}
 		
+	}
+	
+	private String calculatePopularHashtag()
+	{
+		String information = "";
+		String mostPopular = "";
+		int popularIndex = 0;
+		int popularCount = 0;
+		
+		for(int index = 0; index < tweetedHashtags.size(); index++)
+		{
+			int currentPopularity = 0;
+			for(int searched = 1; searched < tweetedHashtags.size(); searched++)
+			{
+				if(tweetedHashtags.get(index).equalsIgnoreCase(tweetedHashtags.get(searched)))
+				{
+					currentPopularity++;
+					
+				}
+			}
+			if (currentPopularity > popularCount)
+			{
+				popularIndex = index;
+				popularCount = currentPopularity;
+				mostPopular = tweetedHashtags.get(index);
+			}
+			
+			
+			
+			
+			
+		}
+		
+		
+		information = " The most popular hashtag within 5 miles of Brihgton is: " + mostPopular + ", and it occurred " + popularCount +  " times out of " + tweetedHashtags.size() + ", AKA "
+				+ (DecimalFormat.getPercentInstance().format(((double) popularCount)/tweetedHashtags.size()));
+		
+		return information;
 	}
 }

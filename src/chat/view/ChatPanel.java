@@ -47,7 +47,9 @@ public class ChatPanel extends JPanel
 		saveButton = new JButton("Save");
 		postButton = new JButton("Post to Twitter");
 		searchButton = new JButton("Search Twitter");
-		searchHashtagAtBrighton = new JButton("Hashtag count at Brighton High");
+		searchHashtagAtBrighton = new JButton("Get Most Common Hashtag Near Brighton High");
+		baseLayout.putConstraint(SpringLayout.NORTH, searchHashtagAtBrighton, 17, SpringLayout.SOUTH, openButton);
+		baseLayout.putConstraint(SpringLayout.WEST, searchHashtagAtBrighton, 0, SpringLayout.WEST, chatButton);
 		
 		
 		setupScrollPane();
@@ -97,7 +99,7 @@ public class ChatPanel extends JPanel
 		this.add(postButton);
 		this.add(searchButton);
 		this.add(searchHashtagAtBrighton);
-		saveButton.setToolTipText("Put a naem in the textField for file name");
+		saveButton.setToolTipText("Put a name in the textField for file name");
 		this.setVisible(true);
 		
 	}
@@ -129,8 +131,6 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, searchButton, 0, SpringLayout.NORTH, chatButton);
 		baseLayout.putConstraint(SpringLayout.WEST, searchButton, 0, SpringLayout.WEST, chatLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, postButton, 0, SpringLayout.NORTH, chatButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, searchHashtagAtBrighton, 0, SpringLayout.NORTH, openButton);
-		baseLayout.putConstraint(SpringLayout.WEST, searchHashtagAtBrighton, 6, SpringLayout.EAST, openButton);
 		
 		
 	}
@@ -196,7 +196,7 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				String results = baseController.searchHashtagsAtBrighton(chatField.getText());
+				String results = baseController.searchHashtagsAtBrighton();
 				chatDisplay.append(results);
 			}
 		});

@@ -166,10 +166,10 @@ public class ChatController
 		return searchResults;
 	}
 	
-	public String searchHashtagsAtBrighton(String hashtagToSearch)
+	public String searchHashtagsAtBrighton()
 	{
 		String searchResults = "";
-		searchResults += twitterBot.getMostCommonHashtagAtBrighton(hashtagToSearch);
+		searchResults += twitterBot.getMostCommonHashtagAtBrighton();
 		searchResults += "\n";
 		return searchResults;
 	}
