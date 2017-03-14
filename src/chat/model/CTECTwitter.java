@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+
+import twitter4j.GeoLocation;
 import twitter4j.Paging;
 
 public class CTECTwitter 
@@ -17,13 +19,17 @@ public class CTECTwitter
 	private Twitter chatbotTwitter;
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
+	private List<String> tweetedHashtags;
+	private GeoLocation brightonHigh;
 	
 	public CTECTwitter(ChatController baseController)
 	{
 		this.baseController = baseController;
 		this.searchedTweets = new ArrayList<Status>();
 		this.tweetedWords = new ArrayList<String>();
+		this.tweetedHashtags = new ArrayList<String>();
 		this.chatbotTwitter = TwitterFactory.getSingleton();
+		this.brightonHigh = new GeoLocation(40.612348, -111.826218);
 		
 	}
 	
@@ -191,5 +197,10 @@ public class CTECTwitter
 				+ (DecimalFormat.getPercentInstance().format(((double) popularCount)/tweetedWords.size()));
 		
 		return information;
+	}
+	
+	private void collectHashtags(String hashtag)
+	{
+		
 	}
 }

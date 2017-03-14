@@ -26,6 +26,7 @@ public class ChatPanel extends JPanel
 	private JButton saveButton;
 	private JButton postButton;
 	private JButton searchButton;
+	private JButton searchHashtagAtBrighton;
 	
 	private JScrollPane chatPane;
 	
@@ -46,7 +47,7 @@ public class ChatPanel extends JPanel
 		saveButton = new JButton("Save");
 		postButton = new JButton("Post to Twitter");
 		searchButton = new JButton("Search Twitter");
-		
+		searchHashtagAtBrighton = new JButton("Hashtag count at Brighton High");
 		
 		
 		setupScrollPane();
@@ -95,6 +96,7 @@ public class ChatPanel extends JPanel
 		this.add(saveButton);
 		this.add(postButton);
 		this.add(searchButton);
+		this.add(searchHashtagAtBrighton);
 		saveButton.setToolTipText("Put a naem in the textField for file name");
 		this.setVisible(true);
 		
@@ -127,6 +129,8 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, searchButton, 0, SpringLayout.NORTH, chatButton);
 		baseLayout.putConstraint(SpringLayout.WEST, searchButton, 0, SpringLayout.WEST, chatLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, postButton, 0, SpringLayout.NORTH, chatButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, searchHashtagAtBrighton, 0, SpringLayout.NORTH, openButton);
+		baseLayout.putConstraint(SpringLayout.WEST, searchHashtagAtBrighton, 6, SpringLayout.EAST, openButton);
 		
 		
 	}
