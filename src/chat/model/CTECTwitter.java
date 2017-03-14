@@ -7,6 +7,7 @@ import twitter4j.Twitter;
 import twitter4j.Status;
 import java.util.List;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import twitter4j.Paging;
 
@@ -186,8 +187,8 @@ public class CTECTwitter
 		}
 		
 		
-		information = "The most popular word is: " + mostPopular + ", and it occurred " + popularCount +  " times out of " + tweetedWords.size() + ", AKA "
-				+ ((double) popularCount)/tweetedWords.size() + "%";
+		information = " The most popular word is: " + mostPopular + ", and it occurred " + popularCount +  " times out of " + tweetedWords.size() + ", AKA "
+				+ (DecimalFormat.getPercentInstance().format(((double) popularCount)/tweetedWords.size()));
 		
 		return information;
 	}
