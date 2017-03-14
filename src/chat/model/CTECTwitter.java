@@ -7,6 +7,9 @@ import twitter4j.Twitter;
 import twitter4j.Status;
 import java.util.List;
 import java.util.Scanner;
+import twitter4j.Query;
+import twitter4j.QueryResult;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -132,6 +135,8 @@ public class CTECTwitter
 		}
 	}
 	
+	
+	
 	private void removeAllBoringWords()
 	{
 		String [] boringWords = createIgnoredWordArray();
@@ -215,8 +220,57 @@ public class CTECTwitter
 		
 	}
 	
-	private void collectHashtags(String hashtag)
+	public String getMostCommonHashtagAtBrighton(String hashtag)
 	{
+		String results = "";
+		collectTweetsFromBrighton();
+		
+		results += "there are " + searchedTweets.size() + " tweets within 5 miles of brighton.";
+		return results;
+	}
+	
+	private void collectTweetsFromBrighton()
+	{
+		searchedTweets.clear();
+		tweetedHashtags.clear();
+		
+		Query query = new Query();
+		query.setGeoCode(brightonHigh, 5, Query.MILES);
+		query.count(100);
+		long lastId = Long.MAX_VALUE;
+		
+		while(searchedTweets.size() < 1000)
+		{
+			if(1000 - searchedTweets.size() > 100)
+			{
+				query.setCount(100);
+			}
+			else
+			{
+				query.setCount(1000 - searchedTweets.size());
+			}
+	
+			try
+			{
+				QueryResult result = chatbotTwitter.search(query);
+				searchedTweets.addAll(result.getTweets());
+				for(Status currentTweet : searchedTweets)
+				{
+					if(currentTweet.getId() < lastId)
+					{
+						lastId = currentTweet.getId();
+					}
+				}
+			
+			}
+			catch(TwitterException searchTweetError)
+			{
+				baseController.handleErrors(searchTweetError);
+				
+			
+			}
+			
+		}
 		
 	}
 }

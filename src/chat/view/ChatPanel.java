@@ -191,5 +191,14 @@ public class ChatPanel extends JPanel
 				chatDisplay.append(results);
 			}
 		});
+		
+		searchHashtagAtBrighton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String results = baseController.searchHashtagsAtBrighton(chatField.getText());
+				chatDisplay.append(results);
+			}
+		});
 	}
 }
