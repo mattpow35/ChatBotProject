@@ -111,6 +111,7 @@ public class CTECTwitter
 		
 		removeAllBoringWords();
 		removeEmptyText();
+		removeMentions();
 		
 		
 		
@@ -197,6 +198,21 @@ public class CTECTwitter
 				+ (DecimalFormat.getPercentInstance().format(((double) popularCount)/tweetedWords.size()));
 		
 		return information;
+	}
+	/*
+	 * state affection- this changes word list.
+	 */
+	private void removeMentions()
+	{
+		for (int index = 0; index < tweetedWords.size(); index ++)
+		{
+			if(tweetedWords.get(index).substring(0, 1).equals("@"))
+			{
+				tweetedWords.remove(index);
+				index --;
+			}
+		}
+		
 	}
 	
 	private void collectHashtags(String hashtag)
