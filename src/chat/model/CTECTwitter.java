@@ -232,10 +232,10 @@ public class CTECTwitter
 		}
 	}
 	
-	public String getMostCommonHashtagAtBrighton()
+	public String getMostCommonHashtagAtBrighton(String date)
 	{
 		String results = "";
-		collectTweetsFromBrighton();
+		collectTweetsFromBrighton(date);
 		turnStatusesToWords();
 		
 		removeAllBoringWords();
@@ -243,17 +243,19 @@ public class CTECTwitter
 		removeMentions();
 		keepOnlyHashtags();
 		
+		results += "The most poplular hashtag since " + date;
 		results += calculatePopularHashtag();
 		return results;
 	}
 	
-	private void collectTweetsFromBrighton()
+	private void collectTweetsFromBrighton(String date)
 	{
 		searchedTweets.clear();
 		tweetedHashtags.clear();
 		tweetedWords.clear();
 		
 		Query query = new Query();
+		query.since(date);
 		query.setGeoCode(brightonHigh, 5, Query.MILES);
 		query.count(100);
 		long lastId = Long.MAX_VALUE;
@@ -288,6 +290,7 @@ public class CTECTwitter
 				
 			
 			}
+			query.setMaxId(lastId);
 			
 		}
 		
@@ -325,7 +328,7 @@ public class CTECTwitter
 		}
 		
 		
-		information = " The most popular hashtag within 5 miles of Brihgton is: " + mostPopular + ", and it occurred " + popularCount +  " times out of " + tweetedHashtags.size() + ", AKA "
+		information = " within 5 miles of Brighton is: " + mostPopular + ", and it occurred " + popularCount +  " times out of " + tweetedHashtags.size() + ", AKA "
 				+ (DecimalFormat.getPercentInstance().format(((double) popularCount)/tweetedHashtags.size()));
 		
 		return information;

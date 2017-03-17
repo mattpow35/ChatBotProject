@@ -27,6 +27,8 @@ public class ChatPanel extends JPanel
 	private JButton postButton;
 	private JButton searchButton;
 	private JButton searchHashtagAtBrighton;
+	private JTextField dateField;
+	private JLabel dateExplanation;
 	
 	private JScrollPane chatPane;
 	
@@ -47,9 +49,12 @@ public class ChatPanel extends JPanel
 		saveButton = new JButton("Save");
 		postButton = new JButton("Post to Twitter");
 		searchButton = new JButton("Search Twitter");
-		searchHashtagAtBrighton = new JButton("Get Most Common Hashtag Near Brighton High");
-		baseLayout.putConstraint(SpringLayout.NORTH, searchHashtagAtBrighton, 17, SpringLayout.SOUTH, openButton);
-		baseLayout.putConstraint(SpringLayout.WEST, searchHashtagAtBrighton, 0, SpringLayout.WEST, chatButton);
+		searchHashtagAtBrighton = new JButton("Get Most Common Hashtag Near Brighton High since  given date.");
+		
+		dateField = new JTextField(15);
+		
+		dateExplanation = new JLabel("Type date in format: YYYY-MM-DD");
+		
 		
 		
 		setupScrollPane();
@@ -99,7 +104,10 @@ public class ChatPanel extends JPanel
 		this.add(postButton);
 		this.add(searchButton);
 		this.add(searchHashtagAtBrighton);
+		this.add(dateField);
+		this.add(dateExplanation);
 		saveButton.setToolTipText("Put a name in the textField for file name");
+		searchHashtagAtBrighton.setToolTipText("Type a valid date to search from in date text area.");
 		this.setVisible(true);
 		
 	}
@@ -131,7 +139,12 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, searchButton, 0, SpringLayout.NORTH, chatButton);
 		baseLayout.putConstraint(SpringLayout.WEST, searchButton, 0, SpringLayout.WEST, chatLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, postButton, 0, SpringLayout.NORTH, chatButton);
-		
+		baseLayout.putConstraint(SpringLayout.WEST, dateField, 0, SpringLayout.WEST, searchHashtagAtBrighton);
+		baseLayout.putConstraint(SpringLayout.NORTH, searchHashtagAtBrighton, 9, SpringLayout.SOUTH, dateField);
+		baseLayout.putConstraint(SpringLayout.SOUTH, dateField, -134, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, dateExplanation, 0, SpringLayout.WEST, dateField);
+		baseLayout.putConstraint(SpringLayout.SOUTH, dateExplanation, -6, SpringLayout.NORTH, dateField);
+		baseLayout.putConstraint(SpringLayout.WEST, searchHashtagAtBrighton, 10, SpringLayout.WEST, this);
 		
 	}
 	
@@ -196,7 +209,7 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				String results = baseController.searchHashtagsAtBrighton();
+				String results = baseController.searchHashtagsAtBrighton(dateField.getText());
 				chatDisplay.append(results);
 			}
 		});
